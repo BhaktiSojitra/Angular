@@ -1,0 +1,29 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">FacultyName</th>
+      <th scope="col">FacultyAge</th>
+      <th scope="col">FacultyImage</th>
+      <th scope="col">FacultyMobile</th>
+      <th scope="col">FacultyEmail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ data.id }}</td>
+      <td>{{ data.facultyname }}</td>
+      <td>{{ data.facultyage }}</td>
+      <td>{{ data.facultyimage }}</td>
+      <td>{{ data.facultymobile }}</td>
+      <td>{{ data.facultyemail }}</td>
+    </tr>
+    <tr></tr>
+  </tbody>
+</table>
+
+<div class="text-center">
+    <button class="btn btn-outline-primary" style="margin-right: 10px;" routerLink="/MockAPI">Back</button>
+    <button class="btn btn-outline-warning" style="margin-right: 10px;" routerLink="/faculty/edit/{{data.id}}">Edit</button>
+    <button class="btn btn-outline-danger" (click)="delete()">Delete</button>
+</div>

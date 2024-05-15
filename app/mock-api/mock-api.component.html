@@ -1,0 +1,29 @@
+<button class="btn btn-outline-secondary m-3" routerLink="/faculty/add">
+  Add
+</button>
+
+<div class="row">
+  <div class="col-3 mb-4" *ngFor="let temp of data">
+    <div class="card">
+      <img
+        class="card-img-top"
+        [src]="temp.facultyimage"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ "ID:- " + temp.id }}</h5>
+        <h5 class="card-text">{{ "Name:- " + temp.facultyname }}</h5>
+        <button
+          class="btn btn-outline-primary"
+          style="margin-right: 10px"
+          routerLink="/faculty/{{ temp.id }}"
+        >
+          View more
+        </button>
+        <button class="btn btn-outline-danger" (click)="delete(temp.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

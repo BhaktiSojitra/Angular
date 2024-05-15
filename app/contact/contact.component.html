@@ -1,0 +1,17 @@
+<!--<p>contact works!</p>
+<input type="text" [(ngModel)]="per"/>
+<h4 *ngIf="per>=0.4">Congratulation you got {{per | percent}}</h4>
+<h4 *ngIf="per<0.4">failed in exam,you got {{per | percent}}</h4>-->
+
+<h4 *ngFor="let temp of names">{{temp}}</h4>
+<h4>{{persons | json}}</h4>
+<h4 *ngFor="let temp of persons">{{temp.name}}</h4>
+
+<table class="table table-striped">
+    <tbody>
+        <tr *ngFor="let temp of persons">
+            <td>{{temp.name}}</td>
+            <td>{{temp.age}}</td>
+        </tr>
+    </tbody>
+</table>

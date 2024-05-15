@@ -1,0 +1,32 @@
+<p>about works!</p>
+<h5>{{"Text:- "+text}}</h5>
+<h5>{{"Name:- "+name}}</h5>
+<h5>{{"Name with uppercase:- "+name | uppercase}}</h5>
+<h5>{{"Name with titlecase:- "+name | titlecase}}</h5>
+<h5>{{name | slice:3}}</h5>
+
+<!-- number pipes -->
+<h5>{{salary | number:'1.3'}}</h5>
+<h5>{{0.1 | percent}}</h5>
+<h5>{{1 | currency}}</h5>
+<h5>{{1 | currency:'INR'}}</h5>
+
+<h5>{{person | json}}</h5>
+
+<!-- date pipes -->
+<h5>{{date}}</h5>
+<h5>{{date | date:'short'}}</h5>
+<h5>{{date | date:'shortDate'}}</h5>
+<h5>{{date | date:'shortTime'}}</h5>
+<h5>{{date | date:'d-M-y'}}</h5>
+
+<!-- <img [src]="imgpath"/> --> 
+
+<button (click)="click()">change name</button> <!-- pass data html to ts file-->
+
+<!-- [] ts file to html file
+     () => html file to ts file -->
+
+<br/>
+
+<input type="text" [(ngModel)]="name"/>

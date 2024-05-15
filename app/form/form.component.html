@@ -1,0 +1,59 @@
+<p>form works!</p>
+<form [formGroup]="myForm" (ngSubmit)="insert()">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td><h5>Enter Name:- </h5></td>
+                <td><h5><input type="text" formControlName="name"/></h5></td>
+                <td><h5><span class="text-danger" *ngIf="myForm.controls.name.touched && myForm.controls.name.invalid">Please Enter Name</span></h5></td>
+            </tr>
+            <tr>
+                <td><h5>Enter Age:- </h5></td>
+                <td><h5><input type="text" formControlName="age"/></h5></td>
+                <td><h5><span class="text-danger" *ngIf="myForm.controls.name.touched && myForm.controls.name.invalid">Please Enter Age</span></h5></td>
+            </tr>
+            <tr>
+               <td colspan="2 "class="text-center" *ngIf="IdToEdit==-1">
+                    <button type="button" class="btn btn-outline-success" (click)="insert()" [disabled]="!myForm.valid">Insert</button></td>
+               <td colspan="2 "class="text-center" *ngIf="IdToEdit!=-1">
+                    <button type="button" class="btn btn-outline-success" (click)="insert()">Edit</button>
+               </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+<br/>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th><h5>Name</h5></th>
+            <th><h5>Age</h5></th>
+            <th><h5>Edit</h5></th>
+            <th><h5>Delete</h5></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let temp of persons; let i=index">
+            <td><h6>{{temp.name}}</h6></td>
+            <td><h6>{{temp.age}}</h6></td>
+            <td><h6><button type="button" class="btn btn-outline-success" (click)="edit(i)">Edit</button></h6></td>
+            <td><h6><button type="button" class="btn btn-outline-success" (click)="delete(i)">Delete</button></h6></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- 
+!myForm.valid: The ! operator negates the value of myForm.valid. 
+So, !myForm.valid will be true if the form is invalid (i.e., at least one 
+of its controls is invalid), 
+and false if the form is valid (i.e., all of its controls are valid).
+
+[disabled]="!myForm.valid": This attribute binding applies the disabled 
+attribute to the HTML element based on the value of !myForm.valid. 
+If !myForm.valid is true (i.e., the form is invalid), the disabled 
+attribute is set on the element, which typically disables the element 
+(such as a button or input field). If !myForm.valid is false 
+(i.e., the form is valid), the disabled attribute is not applied, 
+and the element remains enabled. -->
